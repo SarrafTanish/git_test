@@ -122,8 +122,8 @@
 
 
 
-// mordern way of writing scripts  [ES6 and above] :-
-//() is used to define function and {} is used to define the body of the function.
+// // mordern way of writing scripts  [ES6 and above] :-
+// // () is used to define function and {} is used to define the body of the function.
 
 // let myFunction = () => {
 //   console.log("myfunction");
@@ -150,19 +150,19 @@
 
 
 
-//Arrays:-
-// [] is used to define an array and {} is used to define the body of the function.
+// Arrays:-
+// // [] is used to define an array and {} is used to define the body of the function.
 
 
 // var myArray = []
 // console.log(myArray);
 
-// var myFunction = () => {
+//  var myFunction = () => {
 // console.log("hello");
 // }
 
-// var myArray2 = [1, 2, 3, 4, "Hello", true, null, undefined, myFunction];  // array hold multiple values of different types.
-// console.log(myArray2);
+//  var myArray2 = [1, 2, 3, 4, "Hello", true, null, undefined, myFunction];  // array hold multiple values of different types.
+//  console.log(myArray2);
 // console.log(typeof myArray2); // Output: "object" (arrays are a type of object in JavaScript)
 
 
@@ -190,28 +190,80 @@
 
 // console.log(arr1);
 // console.log(copyArray); // when we copy an array using assignment operator, it creates a reference to the original array. So, when we modify the original array (arr1), it also modifies the copy (copyArray) because both variables point to the same array in memory. This is why both arr1 and copyArray reflect the change when we update arr1[0] to 100.
+// console.log(copyArray2); // when we copy an array using the spread operator, it creates a new array with the same values as the original array. So, when we modify the original array (arr1), it does not affect the copy (copyArray2) because they are two separate arrays in memory. This is why copyArray2 does not reflect the change when we update arr1[0] to 100, but it does reflect the change when we update copyArray2[1] to 200.
 
 
+// //JS objects:-  (key: value pair)
 
-//JS objects:-  (key: value pair)
+// let person = {
+//   name: "John",
+//   age: 30,
+//   hubbies: ["reading", "Traveling"],
+//     address: {
+//         city: "New York",
+//         country: "USA"
+//     },
+//     isAdult: true,
+// };
 
-let person = {
-  name: "John",
-  age: 30,
-  hubbies: ["reading", "Traveling"],
-    address: {
-        city: "New York",
-        country: "USA"
-    },
-    isAdult: true,
-};
+// let myJSON = JSON.stringify(person)  // converting JS object to JSON string.
+// console.log(myJSON);
+// console.log(typeof myJSON); // Output: "string"
+
+// let myJSONobject = JSON.parse(myJSON)  // converting JSON string back to JS object.
+// console.log(myJSONobject);
+// console.log(typeof myJSONobject); // Output: "object"
+
+// const people = [ [], [], [] ]  // array of objects
+// console.log(people);
+
+// console.log(person);
+// console.log(person.age);
+// console.log(person.hubbies[0]);
+// console.log(person.address.city);
 
 
-const people = [ [], [], [] ]  // array of objects
-console.log(people);
+// // diff. b/w var, let and const in JavaScript :-
+
+// //for let :- local scoped
+// var num = 60
+// if (num >= 50) {
+//     let output = `${num} is greater than or equal to 50`;
+//   console.log(output);
+// }else {
+//     let output = `${num} is less than 50`;
+//   console.log(output);
+// }
+
+// console.log(output);//let cannot access outside the block scope.
 
 
-console.log(person);
-console.log(person.age);
-console.log(person.hubbies[0]);
-console.log(person.address.city);
+// //for var :- global scoped
+// var num = 60
+// if (num >= 50) {
+//     var output = `${num} is greater than or equal to 50`;
+//   console.log(output);
+// }else {
+//     var output = `${num} is less than 50`;
+//   console.log(output);
+// }
+
+// console.log(output);// it can reach outside the block scope, its scope is global and can be accessed anywhere in the code.
+
+// //for const :-
+// const myVariable = 100
+// // myVariable = 200 // it will give error because we cannot reassign a value to a constant variable.
+// console.log(myVariable);
+
+
+// //both const and let are block scoped.so it will give an error if we try to access the variable outside the block scope.
+// var num = 60
+// if (num >= 50) {
+//     const output = `${num} is greater than or equal to 50`;
+//   console.log(output);
+// }else {
+//     const output = `${num} is less than 50`;
+//   console.log(output);
+// }
+
+// console.log(output);
