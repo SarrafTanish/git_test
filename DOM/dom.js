@@ -29,6 +29,9 @@ for(let i= 0; i<myList.length; i++){
         
     }else{
         //odd indexed
+        myList[i].style.backgroundColor = 'lightgray';
+        myList[i].style.color = 'black';
+        
     }
 }
 
